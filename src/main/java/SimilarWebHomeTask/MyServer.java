@@ -26,7 +26,7 @@ class MyServer implements Runnable {
   private void getNumUniqueVisitedSites(Context ctx) {
     PathTokens pathTokens = ctx.getPathTokens();
     String visitorId = pathTokens.get("visitorId");
-    Integer numUniqueVisitedSite = inMemoryDb.getNumUniqueVisitedSite(visitorId);
+    Integer numUniqueVisitedSite = inMemoryDb.getNumUniqueVisitedSiteInPlace(visitorId); //second aspect
     ctx.getResponse().send("the number of unique visited sites for visitor " + visitorId + " is " + numUniqueVisitedSite.toString());
   }
 

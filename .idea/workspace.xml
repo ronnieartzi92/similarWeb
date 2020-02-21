@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d232a067-2059-4ede-9d6f-6f04447e12dc" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Attachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/DBWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/DBWrapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/InMemoryDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/MyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/MyServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/PagesReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SimilarWebHomeTask/PagesReader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/DBWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/DBWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -33,8 +45,8 @@
       <file leaf-file-name="PagesReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state relative-caret-position="575">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,8 +57,8 @@
       <file leaf-file-name="MyServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="41" column="15" lean-forward="true" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+            <state relative-caret-position="386">
+              <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +78,8 @@
       <file leaf-file-name="SiteURL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/SiteURL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="43">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,11 +108,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InMemoryDB.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InMemoryDB.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="55" />
+            <state relative-caret-position="741">
+              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attachment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Attachment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="12" column="79" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,8 +144,8 @@
       <file leaf-file-name="DBWrapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/DBWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="437">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -143,10 +167,10 @@
       <find>session.tsLast</find>
       <find>toSeconds</find>
       <find>hash</find>
-      <find>sort</find>
       <find>session</find>
       <find>.add</find>
       <find>.add(</find>
+      <find>sort</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -493,15 +517,16 @@
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PageView.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB2.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/SiteURLSessions.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Session.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/SiteURL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/SiteURLPageViews.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/DBWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Attachment.java" />
       </list>
     </option>
   </component>
@@ -514,11 +539,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="9" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="182" />
     <option name="y" value="23" />
-    <option name="width" value="1671" />
-    <option name="height" value="907" />
+    <option name="width" value="1498" />
+    <option name="height" value="920" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -730,15 +755,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582107299594</updated>
-      <workItem from="1582107301197" duration="79686000" />
+      <workItem from="1582107301197" duration="86815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79686000" />
+    <option name="totallyTimeSpent" value="86815000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1671" height="920" extended-state="6" />
+    <frame x="182" y="23" width="1498" height="920" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -758,15 +783,15 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18955043" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.10571081" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81109446" visible="true" weight="0.1645181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8111413" visible="true" weight="0.18406594" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288835" />
       <window_info anchor="right" id="Gradle" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info id="Favorites" sideWeight="0.18890555" side_tool="true" visible="true" weight="0.1645181" />
+      <window_info id="Favorites" sideWeight="0.1888587" side_tool="true" visible="true" weight="0.18406594" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -806,24 +831,6 @@
           <line>14</line>
           <properties />
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="113" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="118" />
@@ -912,10 +919,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Session.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/DBWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/SiteURL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -929,27 +970,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/SiteURL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Session.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/MyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="41" column="15" lean-forward="true" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        <state relative-caret-position="741">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -958,32 +989,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PagesReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="575">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/PageView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/Attachment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/DBWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarWebHomeTask/InMemoryDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="55" />
+        <state relative-caret-position="207">
+          <caret line="12" column="79" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

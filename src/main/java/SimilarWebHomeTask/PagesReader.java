@@ -34,6 +34,6 @@ public class PagesReader {
     for (String file : args) {
       readDataLineByLine(file);
     }
-    inMemoryDb.sessionsCreation();
+//    inMemoryDb.sessionsCreation();
   }
 }

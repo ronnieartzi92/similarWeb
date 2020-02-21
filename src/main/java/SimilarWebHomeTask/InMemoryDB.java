@@ -2,8 +2,6 @@ package SimilarWebHomeTask;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -42,8 +40,17 @@ class InMemoryDB implements DBWrapper{
   }
 
   public Integer getNumUniqueVisitedSite(String visitorId) {
-    HashSet<String> sites = visitorTable.get(visitorId);
-    return Objects.nonNull(sites) ? visitorTable.get(visitorId).size() : 0;
+    HashSet<String> visitors = visitorTable.get(visitorId);
+    return Objects.nonNull(visitors) ? visitorTable.get(visitorId).size() : 0;
+  }
+
+  public Integer getNumUniqueVisitedSiteInPlace(String visitorId) {
+    Integer count = 0;
+    for (SiteURL siteURL : sitesTable.values()) {
+      if (siteURL.sessions.containsKey(visitorId)) {
+        count ++;
+      }
+    } return count;
   }
 
   public void insert(PageView pageView) {
@@ -59,34 +66,7 @@ class InMemoryDB implements DBWrapper{
             new ArrayList<PageView>(siteURLPV.pageViews.get(pageView.visitorID)){{add(pageView);}});
       }
     } pageViewsTable.put(pageView.siteUrl, siteURLPV);
-//    insertSiteTable(pageView);
-  }
-
-  public void sessionsCreation() {
-    for (String siteUrl : pageViewsTable.keySet()) {
-      HashMap<String, List<Session>> sessions = new HashMap<>();
-      for (List<PageView> pageViewList : pageViewsTable.get(siteUrl).pageViews.values()) {
-        pageViewList.sort(Comparator.comparing(s -> s.ts));
-        for (PageView pv : pageViewList) {
-          addPV(sessions, pv);
-        }
-      } sitesTable.put(siteUrl, new SiteURL(siteUrl, sessions));
-    }
-  }
-
-  public void addPV(HashMap<String, List<Session>> sessions, PageView pv){
-    List<Session> sessionsList = new ArrayList<>();
-    if (!sessions.containsKey(pv.visitorID)) {
-      sessionsList.add(new Session(pv));
-    } else {
-      sessionsList = sessions.get(pv.visitorID);
-      Session session = sessionsList.get(sessionsList.size() - 1);
-      if (pv.ts - session.tsLast <= sessionDefinition) {
-        sessionsList.set(sessionsList.size() - 1, session.addPV(pv));
-      } else {
-        sessionsList.add(new Session(pv));
-      }
-    } sessions.put(pv.visitorID, sessionsList);
+    insertSiteTable(pageView);
   }
 
   public void insertSiteTable(PageView pageView) {
@@ -110,7 +90,6 @@ class InMemoryDB implements DBWrapper{
     long tsDiff = pageView.ts - session.tsLast;
     if (tsDiff < 0) {
       sessions = overLapsTimestamps(pageView, sessions);
-      sessions.sort(Comparator.comparing(s -> s.tsLast));
     } else if (tsDiff <= sessionDefinition) {
       sessions.set(sessions.size()-1, session.addPV(pageView));
     } else {
@@ -144,8 +123,24 @@ class InMemoryDB implements DBWrapper{
         } return sessions;
       }
     }
-    sessions.add(new Session(pageView));
+    sessions.add(binaryInsert(pageView.ts, sessions, 0, sessions.size()-1), new Session(pageView));
     return sessions;
+  }
+
+  private int binaryInsert(Long pageViewTS, List<Session> sessions, int lowerBound, int upperBound) {
+    if (upperBound >= lowerBound) {
+      int curIn = (upperBound + lowerBound) / 2;
+      if (lowerBound == curIn) {
+        if (sessions.get(curIn).tsLast > pageViewTS) {
+          return curIn;
+        }
+      }
+      if (sessions.get(curIn).tsLast < pageViewTS) {
+        return binaryInsert(pageViewTS, sessions, curIn + 1, upperBound);
+      } else {
+        return binaryInsert(pageViewTS, sessions, lowerBound, curIn - 1);
+      }
+    } return lowerBound;
   }
 
   public void setAndRemove(List<Session> sessions, Session session, int index, int indent) {
