@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-class InMemoryDB {
+class InMemoryDB implements DBWrapper{
   private final ConcurrentHashMap<String, SiteURLPageViews> pageViewsTable;
   private final ConcurrentHashMap<String, SiteURL> sitesTable;
   private final ConcurrentHashMap<String, HashSet<String>> visitorTable;
