@@ -2,9 +2,11 @@ package SimilarWebHomeTask;
 
 import com.opencsv.CSVReader;
 import java.io.FileReader;
+import java.util.logging.Logger;
 
 public class PagesReader {
   private static final InMemoryDB inMemoryDb = InMemoryDB.getInstance();
+  private static final Logger logger = Logger.getLogger(Process.class.getName());
 
   public static void readDataLineByLine(String file) {
     try {
@@ -19,6 +21,7 @@ public class PagesReader {
       }
     }
     catch (Exception e) {
+      logger.info("Exception " + e + "reading CSV file");
       e.printStackTrace();
     }
   }
