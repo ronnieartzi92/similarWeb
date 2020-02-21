@@ -1,8 +1,6 @@
 package SimilarWebHomeTask;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,13 +10,11 @@ import java.util.stream.Collectors;
 class InMemoryDB implements DBWrapper{
   private final ConcurrentHashMap<String, SiteURLPageViews> pageViewsTable;
   private final ConcurrentHashMap<String, SiteURL> sitesTable;
-  private final ConcurrentHashMap<String, HashSet<String>> visitorTable;
   private static final InMemoryDB inMemoryDb = new InMemoryDB();
   private static final long sessionDefinition = TimeUnit.MINUTES.toSeconds(30);
 
   private InMemoryDB() {
     this.pageViewsTable = new ConcurrentHashMap<>();
-    this.visitorTable = new ConcurrentHashMap<>();
     this.sitesTable = new ConcurrentHashMap<>();
   }
 
@@ -30,8 +26,7 @@ class InMemoryDB implements DBWrapper{
     SiteURL siteURL = sitesTable.get(siteUrl);
     return Objects.nonNull(siteURL) ?
         sitesTable.get(siteUrl).sessions.values().stream()
-        .flatMap(Collection::stream)
-        .collect(Collectors.toList()).size() : 0;
+        .map(List::size).mapToInt(Integer::intValue).sum() : 0 ;
   }
 
   public Double getMedianSessionsLength(String siteUrl) {
@@ -40,17 +35,8 @@ class InMemoryDB implements DBWrapper{
   }
 
   public Integer getNumUniqueVisitedSite(String visitorId) {
-    HashSet<String> visitors = visitorTable.get(visitorId);
-    return Objects.nonNull(visitors) ? visitorTable.get(visitorId).size() : 0;
-  }
-
-  public Integer getNumUniqueVisitedSiteInPlace(String visitorId) {
-    Integer count = 0;
-    for (SiteURL siteURL : sitesTable.values()) {
-      if (siteURL.sessions.containsKey(visitorId)) {
-        count ++;
-      }
-    } return count;
+    return sitesTable.values().stream().filter(siteURL -> siteURL.sessions.containsKey(visitorId))
+            .collect(Collectors.toList()).size();
   }
 
   public void insert(PageView pageView) {
@@ -69,7 +55,7 @@ class InMemoryDB implements DBWrapper{
     insertSiteTable(pageView);
   }
 
-  public void insertSiteTable(PageView pageView) {
+  private void insertSiteTable(PageView pageView) {
     SiteURL siteURL;
     if (!sitesTable.containsKey(pageView.siteUrl)) {
       siteURL = new SiteURL(pageView);
@@ -84,7 +70,7 @@ class InMemoryDB implements DBWrapper{
     } sitesTable.put(pageView.siteUrl, siteURL);
   }
 
-  public SiteURL inTableHandler(SiteURL siteURL, PageView pageView) {
+  private SiteURL inTableHandler(SiteURL siteURL, PageView pageView) {
     List<Session> sessions = siteURL.sessions.get(pageView.visitorID);
     Session session = sessions.get(sessions.size()-1);
     long tsDiff = pageView.ts - session.tsLast;
@@ -99,7 +85,7 @@ class InMemoryDB implements DBWrapper{
     return siteURL;
   }
 
-  public List<Session> overLapsTimestamps(PageView pageView, List<Session> sessions) {
+  private List<Session> overLapsTimestamps(PageView pageView, List<Session> sessions) {
     for (int i = 0; i < sessions.size(); i++) {
       Long startDiff = pageView.ts - sessions.get(i).tsStart;
       Long endDiff = pageView.ts - sessions.get(i).tsLast;
@@ -143,19 +129,9 @@ class InMemoryDB implements DBWrapper{
     } return lowerBound;
   }
 
-  public void setAndRemove(List<Session> sessions, Session session, int index, int indent) {
+  private void setAndRemove(List<Session> sessions, Session session, int index, int indent) {
     sessions.set(index, session);
     sessions.remove(index + indent);
-  }
-
-  public void insertToUsersTable(PageView pageView) {
-    HashSet<String> sites;
-    if (!visitorTable.containsKey(pageView.visitorID)) {
-      sites = new HashSet<String>() {{add(pageView.siteUrl);}};
-    } else {
-      sites = visitorTable.get(pageView.visitorID);
-      sites.add(pageView.siteUrl);
-    } visitorTable.put(pageView.visitorID, sites);
   }
 
 }

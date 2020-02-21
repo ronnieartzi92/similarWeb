@@ -17,14 +17,8 @@ public interface DBWrapper {
 
   /**
    * This method will execute the query
-   * "SELECT COUNT(*) FROM visitorTable WHERE visitorId = " + visitorId;
-   */
-  Integer getNumUniqueVisitedSite(String visitorId);
-
-  /**
-   * This method will execute the query
    * "SELECT COUNT(*) FROM sitesTable WHERE visitorId = " + visitorId + " GROUP BY siteUrl"
    */
-  Integer getNumUniqueVisitedSiteInPlace(String visitorId);
+  Integer getNumUniqueVisitedSite(String visitorId);
 
 }
