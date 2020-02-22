@@ -8,7 +8,7 @@ public class PagesReader {
   private static final InMemoryDB inMemoryDb = InMemoryDB.getInstance();
   private static final Logger logger = Logger.getLogger(Process.class.getName());
 
-  public static void readDataLineByLine(String file) {
+  private static void readDataLineByLine(String file) {
     try {
       FileReader filereader = new FileReader(file);
       CSVReader csvReader = new CSVReader(filereader);

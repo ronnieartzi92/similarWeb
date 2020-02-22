@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 public class Attachment {
-  private final ConcurrentHashMap<String, SiteURLPageViews> pageViewsTable;
-  private final ConcurrentHashMap<String, SiteURL> sitesTable;
+  private final HashMap<String, SiteURLPageViews> pageViewsTable;
+  private final HashMap<String, SiteURL> sitesTable;
   private static final long sessionDefinition = TimeUnit.MINUTES.toSeconds(30);
 
   private Attachment() {
-    this.pageViewsTable = new ConcurrentHashMap<>();
-    this.sitesTable = new ConcurrentHashMap<>();
+    this.pageViewsTable = new HashMap<>();
+    this.sitesTable = new HashMap<>();
   }
 
   public void sessionsCreation() {

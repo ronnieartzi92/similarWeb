@@ -8,7 +8,6 @@ public class SiteURLPageViews {
   String siteUrl;
   HashMap<String, List<PageView>> pageViews;
 
-
   public SiteURLPageViews(PageView pageView) {
     this.siteUrl = pageView.siteUrl;
     this.pageViews = new HashMap<String, List<PageView>>() {{

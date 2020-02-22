@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SiteURL {
   String siteUrl;
@@ -22,14 +21,7 @@ public class SiteURL {
     this.sessions = sessions;
   }
 
-  public double getMedianSessionLength() {
-    return findMedian(this.sessions.values().stream()
-        .flatMap(list -> list.stream().map(s -> s.tsLast - s.tsStart))
-        .sorted()
-        .collect(Collectors.toList()));
-  }
-
-  public static double findMedian(List<Long> list) {
+  public double findMedian(List<Long> list) {
     Collections.sort(list);
     int n = list.size();
     if (n % 2 != 0)

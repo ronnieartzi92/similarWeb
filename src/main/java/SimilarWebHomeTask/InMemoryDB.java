@@ -1,21 +1,21 @@
 package SimilarWebHomeTask;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 class InMemoryDB implements DBWrapper{
-  private final ConcurrentHashMap<String, SiteURLPageViews> pageViewsTable;
-  private final ConcurrentHashMap<String, SiteURL> sitesTable;
+  private final HashMap<String, SiteURLPageViews> pageViewsTable;
+  private final HashMap<String, SiteURL> sitesTable;
   private static final InMemoryDB inMemoryDb = new InMemoryDB();
   private static final long sessionDefinition = TimeUnit.MINUTES.toSeconds(30);
 
   private InMemoryDB() {
-    this.pageViewsTable = new ConcurrentHashMap<>();
-    this.sitesTable = new ConcurrentHashMap<>();
+    this.pageViewsTable = new HashMap<>();
+    this.sitesTable = new HashMap<>();
   }
 
   public static InMemoryDB getInstance() {
@@ -26,12 +26,14 @@ class InMemoryDB implements DBWrapper{
     SiteURL siteURL = sitesTable.get(siteUrl);
     return Objects.nonNull(siteURL) ?
         sitesTable.get(siteUrl).sessions.values().stream()
-        .map(List::size).mapToInt(Integer::intValue).sum() : 0 ;
+            .map(List::size).mapToInt(Integer::intValue).sum() : 0;
   }
 
   public Double getMedianSessionsLength(String siteUrl) {
     SiteURL siteURL = sitesTable.get(siteUrl);
-    return Objects.nonNull(siteURL) ? siteURL.getMedianSessionLength() : 0;
+    return Objects.nonNull(siteURL) ? siteURL.findMedian(siteURL.sessions.values()
+        .stream().flatMap(list -> list.stream().map(s -> s.tsLast - s.tsStart)).sorted()
+        .collect(Collectors.toList())) : 0;
   }
 
   public Integer getNumUniqueVisitedSite(String visitorId) {
