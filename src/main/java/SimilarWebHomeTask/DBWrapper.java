@@ -21,4 +21,11 @@ public interface DBWrapper {
    */
   Integer getNumUniqueVisitedSite(String visitorId);
 
+  /**
+   * This method will execute the insert query
+   * "INSERT INTO pageViewsTable (pageViewId, siteUrl, userId, pageUrl, timestamp)
+   * VALUES (id, pageView.visitorID, pageView.siteUrl, pageView.pageUrl, pageView.ts);
+   */
+  void insert(PageView pageView);
+
 }
